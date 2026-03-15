@@ -1,20 +1,53 @@
-import React from 'react'
-import FaceExpression from '../../Expression/components/FaceExpression'
-import Player from '../components/Player'
-import { useSong } from '../hooks/useSong'
+import { useState } from "react";
+import "../style/Home.scss";
 
-const Home = () => {
+import FaceExpression from "../../Expression/components/FaceExpression";
+import Playlist from "../components/Playlist";
+import Player from "../components/Player";
+import MoodHistory from "../components/MoodHistory";
 
-    const { handleGetSong } = useSong()
+export default function Home() {
 
-    return (
-        <>
-            <FaceExpression
-                onClick={(expression) => { handleGetSong({ mood: expression }) }}
-            />
-            <Player />
-        </>
-    )
+  const [mood, setMood] = useState("neutral");
+
+  return (
+
+    <div className="app">
+
+      {/* NAVBAR */}
+      <div className="navbar">
+
+        <div className="logo">Moodify</div>
+
+        <div className="nav-right">
+          <div className="profile">S</div>
+        </div>
+
+      </div>
+
+
+      {/* GRID */}
+      <div className="grid">
+
+        <div className="camera-card">
+          <FaceExpression mood={mood} setMood={setMood}/>
+        </div>
+
+        <div className="history-card">
+          <MoodHistory/>
+        </div>
+
+        <div className="playlist-card">
+          <Playlist mood={mood}/>
+        </div>
+
+        <div className="player-area">
+          <Player/>
+        </div>
+
+      </div>
+
+    </div>
+
+  );
 }
-
-export default Home

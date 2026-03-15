@@ -1,0 +1,260 @@
+/* APP BACKGROUND */
+
+.app{
+
+min-height:100vh;
+padding:30px;
+
+background: linear-gradient(
+135deg,
+#150122,
+#442674,
+#653056
+);
+
+font-family:"Inter",sans-serif;
+
+color:#eee9e9;
+
+}
+
+
+
+/* NAVBAR */
+
+.navbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:700;
+
+}
+
+.nav-right{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.profile{
+
+width:38px;
+height:38px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:rgb(58, 13, 135);
+
+font-weight:600;
+
+}
+
+
+
+/* GRID LAYOUT */
+
+.grid{
+
+display:grid;
+
+grid-template-columns: 1.2fr 1fr 1.6fr;
+
+grid-template-areas:
+
+"camera history playlist"
+"player player player";
+
+gap:25px;
+
+}
+
+
+/* GRID AREAS */
+
+.camera-card{
+grid-area:camera;
+}
+
+.history-card{
+grid-area:history;
+}
+
+.playlist-card{
+grid-area:playlist;
+}
+
+ 
+.player-area{
+grid-area:player;
+}
+
+
+
+/* GLASS CARDS */
+
+.camera-card,
+.playlist-card,
+.history-card,
+.player-area{
+
+background: rgba(132, 98, 120, 0.258);
+
+backdrop-filter: none;
+
+border-radius:18px;
+
+padding:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+}
+
+
+
+/* CAMERA */
+
+.camera-card{
+
+display:flex;
+flex-direction:column;
+
+align-items:center;
+justify-content:center;
+
+gap:12px;
+overflow: hidden;
+padding:20px;
+
+}
+
+.camera-card video{
+
+width:100%;
+max-width:420px;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:18px;
+
+}
+
+.camera-card button{
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+margin:0 auto;
+
+padding:10px 22px;
+
+border:none;
+border-radius:12px;
+
+background:linear-gradient(
+135deg,
+#9d4edd,
+#0f011a
+);
+
+color:white;
+
+font-size:14px;
+font-weight:500;
+
+cursor:pointer;
+
+transition:all 0.25s ease;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
+
+}
+
+.camera-card button:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 8px 18px rgba(0,0,0,0.35);
+
+background:linear-gradient(
+135deg,
+#410333,
+#0f011a
+);
+
+}
+
+.camera-card h2{
+
+margin: 5px;;
+font-size:26px;
+font-weight:600;
+text-align: center;
+}
+
+/* HISTORY */
+
+.history-card{
+
+font-size:15px;
+
+max-height:300px;
+overflow-y:auto;
+
+}
+
+
+
+/* MOOD */
+
+ 
+
+
+/* PLAYER */
+
+.player-area{
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+
+
+/* PLAYLIST */
+
+.playlist-card{
+
+display:flex;
+flex-direction:column;
+gap:12px;
+
+}
+
+.playlist-card img{
+
+width:40px;
+height:40px;
+
+border-radius:6px;
+object-fit:cover;
+
+}

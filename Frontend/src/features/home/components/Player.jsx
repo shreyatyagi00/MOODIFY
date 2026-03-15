@@ -100,7 +100,9 @@ const Player = () => {
 
     const progress = duration ? (currentTime / duration) * 100 : 0
 
-    if (!song) return null
+    if (!song) {
+  return <div className="player">No song selected</div>
+}
 
     return (
         <div className="player">

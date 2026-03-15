@@ -2,7 +2,6 @@ const songModel = require("../models/song.model")
 const storageService = require("../services/storage.service")
 const id3 = require("node-id3")
 
-
 async function uploadSong(req, res) {
 
     const songBuffer = req.file.buffer
@@ -10,7 +9,7 @@ async function uploadSong(req, res) {
 
     const tags = id3.read(songBuffer)
 
-    const [ songFile, posterFile ] = await Promise.all([
+    const [songFile, posterFile] = await Promise.all([
         storageService.uploadFile({
             buffer: songBuffer,
             filename: tags.title + ".mp3",
@@ -34,23 +33,18 @@ async function uploadSong(req, res) {
         message: "song created successfully",
         song
     })
-
 }
 
 async function getSong(req, res) {
 
     const { mood } = req.query
 
-    const song = await songModel.findOne({
-        mood,
-    })
+    const songs = await songModel.find({ mood })
 
     res.status(200).json({
-        message: "song fetched successfully.",
-        song,
+        message: "songs fetched successfully.",
+        songs
     })
-
 }
-
 
 module.exports = { uploadSong, getSong }
