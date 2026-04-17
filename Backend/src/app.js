@@ -5,9 +5,9 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: "*",
+  origin: "https://moodify-henna-nu.vercel.app",
   credentials: true
-}));
+}))
 
 /**
  * Routes
