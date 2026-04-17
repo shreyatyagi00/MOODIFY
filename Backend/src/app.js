@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: "https://moodify-henna-nu.vercel.app",
+  origin: "https://moodify-fs.vercel.app",
   credentials: true
 }))
 
