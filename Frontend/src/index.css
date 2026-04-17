@@ -35,13 +35,13 @@
 
 body {
   margin: 0;
-  background: var(--bg-base);
+  background: transparent;
 }
 
 #root {
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   box-sizing: border-box;
 }
 

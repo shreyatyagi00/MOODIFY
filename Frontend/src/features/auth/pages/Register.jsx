@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "../style/register.scss"
+import "./login.scss"
 import FormGroup from '../components/FormGroup'
 import { Link } from 'react-router'
 import { useAuth } from '../hooks/useAuth'
@@ -25,25 +25,46 @@ const Register = () => {
     }
 
     return (
-        <main className="register-page">
+        <main className="login-page">   {/* ⭐ same class */}
             <div className="form-container">
-                <h1>Register</h1>
-                <form onSubmit={handleSubmit} >
+
+                <h1>Create Account </h1>
+                <p>Register to get started</p>
+
+                <form onSubmit={handleSubmit}>
+
                     <FormGroup
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
-                        label="Name" placeholder="Enter your name" />
+                        label="Name"
+                        placeholder="Enter your name"
+                    />
+
                     <FormGroup
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        label="Email" placeholder="Enter your email" />
+                        label="Email"
+                        placeholder="Enter your email"
+                    />
+
                     <FormGroup
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        label="Password" placeholder="Enter your password" />
-                    <button className='button' type="submit">Register</button>
+                        label="Password"
+                        placeholder="Enter your password"
+                        type="password"
+                    />
+
+                    <button className="button auth-btn" type="submit" disabled={loading}>
+                        {loading ? "Creating..." : "Register"}
+                    </button>
+
                 </form>
-                <p>Already have an account? <Link to="/login">Login here</Link></p>
+
+                <p>
+                    Already have an account? <Link to="/login">Login here</Link>
+                </p>
+
             </div>
         </main>
     )
