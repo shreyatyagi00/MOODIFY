@@ -1,0 +1,15 @@
+.history-card ul {
+  margin-top: 30px;
+}
+
+.history-card li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+}
+
+.history-card li span {
+  font-size: 16px;
+}

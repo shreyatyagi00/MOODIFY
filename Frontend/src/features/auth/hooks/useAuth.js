@@ -37,8 +37,15 @@ export const useAuth = () => {
     }
 
     useEffect(() => {
-        handleGetMe()
-    }, [])
+    const token = localStorage.getItem("token")
+
+    if (!token) {
+        setLoading(false)   // ⭐ yahi missing tha
+        return
+    }
+
+    handleGetMe()
+}, [])
 
     return ({
         user, loading, handleRegister, handleLogin, handleLogout, handleGetMe
