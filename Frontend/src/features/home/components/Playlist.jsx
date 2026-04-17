@@ -8,7 +8,7 @@ export default function Playlist({ mood }) {
     async function fetchSongs() {
       try {
         const res = await fetch(
-          `http://localhost:3000/api/songs?mood=${mood}`
+          `https://moodify-28fd.onrender.com/api/songs?mood=${mood}`
         );
         const data = await res.json();
         const fetchedSongs = data.songs;
